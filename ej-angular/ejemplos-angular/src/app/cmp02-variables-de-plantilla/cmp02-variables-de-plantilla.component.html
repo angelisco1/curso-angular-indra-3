@@ -1,0 +1,6 @@
+<h2>Variables de plantilla (referencias)</h2>
+<input type="text" id="a" name="b" #inputNombre>
+<button type="button" (click)="saludar(inputNombre.value); inputNombre.value = ''">Saludar a</button>
+<button type="button" (click)="saludar2(inputNombre)">Saludar a</button>
+
+<app-reproductor></app-reproductor>

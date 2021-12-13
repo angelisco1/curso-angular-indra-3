@@ -1,0 +1,11 @@
+<video src="assets/video.mp4" width="200" #video (timeupdate)="actualizarProgreso($event)"></video>
+
+<button type="button" (click)="play(video)">Play</button>
+<button type="button" (click)="pause(video)">Pause</button>
+<input type="range" min="0" max="100" (input)="cambiarVolumen(video, $event)" [value]="currentVolume">
+<button type="button" (click)="fullScreen(video)">Full screen</button>
+<button type="button" (click)="replay(video)">Replay</button>
+<button type="button" (click)="subirVolumen()">+ volumen</button>
+<button type="button" (click)="bajarVolumen()">- volumen</button>
+
+<progress [value]="currentTime" [max]="getDuration(video)" buffer="0.5"></progress>

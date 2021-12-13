@@ -1,0 +1,33 @@
+<h2>Data Binding</h2>
+
+<h3>String Interpolation</h3>
+<p>Nombre: {{nombre}}</p>
+<p>Nombre: {{getNombre()}}</p>
+<p>Hola {{ nombre2 ? nombre2 : 'mundo' }}</p>
+<!-- Truthy: true, números != 0, strings != '' y resto de cosas -->
+<!-- Falsy: false, 0, '', null, undefined, NaN -->
+
+<h3>Propery Binding</h3>
+<input type="text" [disabled]="deshabilitarInput" [placeholder]="nombre">
+<input type="text" [placeholder]="getNombre()">
+<input type="text" [placeholder]="nombre2 ? nombre2 : 'Introduzca un nombre'">
+
+<img [src]="logo.urlLogo" alt="Logo de {{logo.nombre}}" width="150">
+<img [src]="logo.urlLogo" [alt]="textoAlternativo" width="150">
+<img [src]="logo.urlLogo" [alt]="'Logo de ' + logo.nombre" width="150">
+<!-- <img [src]="logo.urlLogo" [alt]="`Logo de ${logo.nombre}`" width="150"> -->
+
+<p [style.color]="'blue'">El texto es de color azul</p>
+
+<h3>Event Binding</h3>
+<button type="button" (click)="cambiarNombre('Mike Kozinski', $event)">Cambiar nombre de Falco</button>
+
+<h3>Two Way Data Binding</h3>
+<input type="text" [(ngModel)]="nombre">
+
+<h3>Ejercicio: simula el Two Way Data Binding</h3>
+<input type="text" [value]="nombre" (input)="cambiarNombre2($event)">
+<input type="text" [value]="nombre" (keyup)="cambiarNombre2($event)">
+<!-- <input type="text" [value]="nombre" (change)="cambiarNombre2($event)">
+<input type="text" [value]="nombre" (keydown)="cambiarNombre2($event)">
+<input type="text" [value]="nombre" (keypress)="cambiarNombre2($event)"> -->
