@@ -33,4 +33,7 @@
   <li *ngFor="let tarea of tareas | filtro:filtroTxt">{{tarea}}</li>
 </ul>
 
-<p>{{'' | ocultarPalabras}}</p>
+<p>{{ 'hola mundo' | reverse}}</p>
+<p>{{ 'No se si me va a tocar la loteria, o no me va a tocar...' | ocultarPalabras:['no', 'si', 'loteria'] }}</p>
+
+<pre>{{datosPost1 | async | json}}</pre>

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -19,6 +19,10 @@ import { DoblePipe } from './cmp05-pipes/pipes/doble.pipe';
 import { FiltroPipe } from './cmp05-pipes/pipes/filtro.pipe';
 import { ReversePipe } from './cmp05-pipes/pipes/reverse.pipe';
 import { OcultarPalabrasPipe } from './cmp05-pipes/pipes/ocultar-palabras.pipe';
+import { Cmp06FormulariosComponent } from './cmp06-formularios/cmp06-formularios.component';
+import { DePlantillaComponent } from './cmp06-formularios/de-plantilla/de-plantilla.component';
+import { ReactivoComponent } from './cmp06-formularios/reactivo/reactivo.component';
+import { ErrorComponent } from './cmp06-formularios/error/error.component';
 
 @NgModule({
   declarations: [
@@ -39,10 +43,15 @@ import { OcultarPalabrasPipe } from './cmp05-pipes/pipes/ocultar-palabras.pipe';
     FiltroPipe,
     ReversePipe,
     OcultarPalabrasPipe,
+    Cmp06FormulariosComponent,
+    DePlantillaComponent,
+    ReactivoComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

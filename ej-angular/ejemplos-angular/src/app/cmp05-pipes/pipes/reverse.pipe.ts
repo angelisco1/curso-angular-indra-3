@@ -5,8 +5,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ReversePipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(value: string): string {
+    // const arrLetras = value.split('')
+    // const arrAlReves = arrLetras.reverse()
+    // const resultado = arrAlReves.join('')
+    // return resultado;
+    return value.split('').reverse().join('')
   }
 
 }
