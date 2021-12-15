@@ -187,7 +187,7 @@ const datosPersona2 = {
 // if (datosPersona2 && datosPersona2.telefonos && datosPersona2.telefonos.movil && datosPersona2.telefonos.movil.numero) {
 //   console.log(datosPersona2.telefonos.movil.numero)
 // }
-// console.log(datosPersona2?.telefonos?.movil?.numero || 'No tiene movil')
+console.log(datosPersona2?.telefonos?.movil?.numero || 'No tiene movil')
 
 
 // Desestructuración de arrays y objetos
@@ -203,6 +203,23 @@ console.log(dir)
 const colores = ['blanco', 'negro', 'gris']
 const [ , negro, g ] = colores
 console.log(g)
+
+
+// class Persona {
+//   nombre: string;
+//   apellidos: string;
+
+//   constructor(nombre: string, apellidos: string) {
+//     this.nombre = nombre
+//     this.apellidos = apellidos
+//   }
+
+// }
+class Persona {
+  constructor(public nombre: string, public apellidos: string) {}
+}
+
+
 
 
 

@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Cmp03InputYOutputComponent implements OnInit {
 
+  nombreLeia: string = 'Leia Organa'
+  nombreLuke: string = 'Luke Skywalker'
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  muestraEvento(msg: string): void {
+    console.log(msg)
+  }
+
+  cambiarNombre(nuevoNombre: string): void {
+    this.nombreLeia = nuevoNombre
+  }
 }

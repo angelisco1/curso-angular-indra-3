@@ -1,0 +1,53 @@
+<h2>Directivas</h2>
+
+<h3>De atributo</h3>
+<p [ngStyle]="{color: colorLetra, backgroundColor: 'black'}" >El fondo es negro y la letra blanca</p>
+<p [ngClass]="{tachada: tachada, fondoNegro: true, letraBlanca: true}">El fondo es negro y la letra blanca</p>
+
+<input type="color" [(ngModel)]="colorLetra">
+<button type="button" (click)="toggleTachada()">Alternar texto tachado</button>
+
+<p appMarcar>El párrafo se marca si pasas el ratón por encima</p>
+<p [appMarcar]="colorLetra">El párrafo se marca si pasas el ratón por encima</p>
+<p appMarcar="blue">El párrafo se marca si pasas el ratón por encima</p>
+<p appMarcar="orange">El párrafo se marca si pasas el ratón por encima</p>
+
+<input type="text" appPowerMode>
+
+<h3>Estructurales</h3>
+
+<!-- <button type="button" *ngIf="!logueado; else logoutBtn" (click)="cambiarLogueado(true)">Login</button> -->
+<!-- <ng-template [ngIf]="!logueado">
+  <button type="button">Login</button>
+</ng-template> -->
+<!-- <button type="button" *ngIf="logueado">Logout</button> -->
+
+<div *ngIf="!logueado; then loginBtn else logoutBtn"></div>
+
+<ng-template #loginBtn>
+  <button type="button" (click)="cambiarLogueado(true)">Login</button>
+</ng-template>
+
+<ng-template #logoutBtn>
+  <button type="button" (click)="cambiarLogueado(false)">Logout</button>
+</ng-template>
+
+<!-- <button type="button" (click)="toggleLogueado()">{{txtBtn}}</button> -->
+
+<ul>
+  <li *ngFor="let mascota of mascotas; let pos = index; let esUltimo = last; let esPrimero = first">
+    {{pos + 1}}: {{mascota}} {{esPrimero ? '(Es el primero)' : null}} {{esUltimo ? '(Es el último)' : ''}}
+  </li>
+</ul>
+
+<input type="text" [(ngModel)]="mascotaSeleccionada">
+
+<div [ngSwitch]="mascotaSeleccionada">
+  <!-- <p *ngSwitchCase="'perro'">Tengo un perro</p>
+  <p *ngSwitchCase="'gato'">Tengo un gato</p>
+  <p *ngSwitchCase="'canario'">Tengo un canario</p> -->
+  <ng-container *ngFor="let mascota of mascotas">
+    <p *ngSwitchCase="mascota">Tengo un {{mascota}}</p>
+  </ng-container>
+  <p *ngSwitchDefault>No tenemos ninguna mascota de las anteriores</p>
+</div>

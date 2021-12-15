@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-reproductor',
@@ -10,28 +11,32 @@ export class ReproductorComponent implements OnInit {
   @ViewChild('video') videoElem!: ElementRef;
   currentVolume: number = 0
   currentTime: number = 0
+  duration: number = 0
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }
 
   ngAfterViewInit() {
-    console.log(this.videoElem)
+    // console.log(this.videoElem)
     this.videoElem.nativeElement.volume = this.currentVolume / 100
     this.videoElem.nativeElement.play()
-    setTimeout(() => {
-      console.dir(this.videoElem.nativeElement)
-      // console.dir(this.videoElem.nativeElement.duration)
-    }, 1000)
+    // console.log(this.videoElem.nativeElement.duration)
   }
 
-  getDuration(video: HTMLVideoElement): number {
-    return video.duration
+  setDuration() {
+    console.log(this.videoElem.nativeElement.duration)
+    this.duration = this.videoElem.nativeElement.duration
+    // console.log(this.duration)
   }
+
+  // getDuration(video: HTMLVideoElement): number {
+  //   return video.duration || 0
+  //   // return this.videoElem?.nativeElement.duration || 0
+  // }
 
   actualizarProgreso(event: any): void {
-    console.log(event)
     this.currentTime = event.target.currentTime
   }
 

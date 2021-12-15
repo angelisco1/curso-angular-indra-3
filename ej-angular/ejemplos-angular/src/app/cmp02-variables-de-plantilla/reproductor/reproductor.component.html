@@ -1,4 +1,4 @@
-<video src="assets/video.mp4" width="200" #video (timeupdate)="actualizarProgreso($event)"></video>
+<video src="assets/video.mp4" width="200" #video (timeupdate)="actualizarProgreso($event)" (loadedmetadata)="setDuration()"></video>
 
 <button type="button" (click)="play(video)">Play</button>
 <button type="button" (click)="pause(video)">Pause</button>
@@ -8,4 +8,5 @@
 <button type="button" (click)="subirVolumen()">+ volumen</button>
 <button type="button" (click)="bajarVolumen()">- volumen</button>
 
-<progress [value]="currentTime" [max]="getDuration(video)" buffer="0.5"></progress>
+<progress [value]="currentTime" [max]="duration" buffer="0.5"></progress>
+<!-- <progress [value]="currentTime" [max]="getDuration(video)" buffer="0.5"></progress> -->

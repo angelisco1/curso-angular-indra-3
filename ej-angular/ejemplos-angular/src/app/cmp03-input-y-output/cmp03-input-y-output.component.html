@@ -1,10 +1,15 @@
 <h2>Input y Output</h2>
 
-<app-sugus></app-sugus>
-<app-sugus color="red" sabor="fresa"></app-sugus>
-<app-sugus color="blue" sabor="piña"></app-sugus>
-<app-sugus color="orange" sabor="naranja"></app-sugus>
+<div class="caja-sugus">
+  <app-sugus></app-sugus>
+  <app-sugus color="red" sabor="fresa"></app-sugus>
+  <app-sugus color="blue" sabor="piña"></app-sugus>
+  <app-sugus color="orange" sabor="naranja"></app-sugus>
+</div>
 
-<!-- <input type="text">
-<input type="number">
-<input type="color"> -->
+<app-mi-boton texto="Pulsa aquí" (pulsado)="muestraEvento($event)"></app-mi-boton>
+
+
+<app-luke [nombre]="nombreLuke" [nombreHermana]="nombreLeia"></app-luke>
+
+<app-leia [nombre]="nombreLeia" (nombreCambiado)="cambiarNombre($event)"></app-leia>
