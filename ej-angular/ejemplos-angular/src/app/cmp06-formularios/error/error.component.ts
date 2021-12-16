@@ -49,6 +49,9 @@ export class ErrorComponent implements OnInit, OnChanges {
           this.mensajesErrores.push('La contraseña tiene que tener alguna letra mayúscula')
         }
 
+      } else if (key === 'confirmarPassword') {
+
+        this.mensajesErrores.push('Las contraseñas tienen que ser iguales')
       }
     }
   }

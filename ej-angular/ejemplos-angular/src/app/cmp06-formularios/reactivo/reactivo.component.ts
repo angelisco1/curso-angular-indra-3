@@ -19,6 +19,10 @@ export class ReactivoComponent implements OnInit {
     return this.formulario.controls['username'].invalid && this.formulario.controls['username'].dirty
   }
 
+  // get inputConfirmarPasswordProps(): boolean {
+  //   return this.formulario.controls['confirmarPassword'].dirty && this.formulario?.errors?.['confirmarPassword'];
+  // }
+
   get inputUsername(): AbstractControl {
     return this.formulario.controls['username']
   }
@@ -31,6 +35,11 @@ export class ReactivoComponent implements OnInit {
     return this.formulario.controls['password'].errors
   }
 
+  get erroresConfirmarPassword(): ValidationErrors | null {
+    // return this.formulario.errors
+    return this.formulario.controls['confirmarPassword'].errors
+  }
+
   constructor(private formBuilder: FormBuilder) {
     this.formulario = formBuilder.group({
 
@@ -38,9 +47,12 @@ export class ReactivoComponent implements OnInit {
 
       email: formBuilder.control('aaa@aaa.com', [Validators.required, Validators.pattern(/[a-z]+@[a-z]+\.(com|es|net)/)]),
 
-      password: formBuilder.control('', [Validators.required, Validators.minLength(8), CustomValidators.esPasswordSegura({mayus: true, simbolos: true})])
+      password: formBuilder.control('', [Validators.required, Validators.minLength(8), CustomValidators.esPasswordSegura({mayus: true, simbolos: true})]),
+
+      confirmarPassword: formBuilder.control('', [CustomValidators.passwordRepetidaValida])
     }, {
-      // updateOn: 'blur'
+      // updateOn: 'blur',
+      // validators: [CustomValidators.passwordRepetidaValida]
     })
   }
 
@@ -49,6 +61,7 @@ export class ReactivoComponent implements OnInit {
   }
 
   registro() {
+    console.log(this.formulario)
     console.log(this.formulario.value)
   }
 

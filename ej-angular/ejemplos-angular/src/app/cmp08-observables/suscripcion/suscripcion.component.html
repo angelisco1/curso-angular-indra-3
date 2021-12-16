@@ -1,0 +1,31 @@
+<div>
+  <h4>Suscripción a {{plataforma}}</h4>
+  <p>Precio: {{precio | currency:'EUR'}}</p>
+  <p>Estado: {{subEstado ? 'activa' : 'no activa'}}</p>
+
+
+  <ng-container *ngIf="subEstado; else suscripcionActivaElements">
+    <p>Fecha próxima renovación: {{fechaProximoPago | date:'hh:mm:ss'}}</p>
+    <button type="button" class="btn btn-danger" (click)="cancelarSuscripcion()">Cancelar suscripción</button>
+  </ng-container>
+
+  <ng-template #suscripcionActivaElements>
+    <p>Fecha próxima renovación: --:--:--</p>
+    <button type="button" class="btn btn-success" (click)="activarSuscripcion()">Activar suscripción</button>
+  </ng-template>
+
+
+<!--
+  <p *ngIf="subEstado; else noFecha">Fecha próxima renovación: {{fechaProximoPago | date:'hh:mm:ss'}}</p>
+
+  <button type="button" *ngIf="!subEstado; else cancelarBtn" class="btn btn-success" (click)="activarSuscripcion()">Activar suscripción</button>
+
+  <ng-template #cancelarBtn>
+    <button type="button" class="btn btn-danger" (click)="cancelarSuscripcion()">Cancelar suscripción</button>
+  </ng-template>
+
+  <ng-template #noFecha>
+    <p>Fecha próxima renovación: --:--:--</p>
+  </ng-template>
+-->
+</div>

@@ -1,4 +1,4 @@
-import { AbstractControl, ValidationErrors, ValidatorFn } from "@angular/forms";
+import { AbstractControl, FormGroup, ValidationErrors, ValidatorFn } from "@angular/forms";
 
 interface IOpcionesPassword {
   mayus?: boolean,
@@ -56,9 +56,39 @@ function esUnStark(control: AbstractControl): ValidationErrors | null {
   // }
 }
 
+// function passwordRepetidaValida(formGroup: AbstractControl): ValidationErrors | null {
+//   const { password, confirmarPassword } = formGroup.value
+
+//   if (password === confirmarPassword) {
+//     return null
+//   }
+
+//   return {
+//     confirmarPassword: true
+//   }
+// }
+
+function passwordRepetidaValida(control: AbstractControl): ValidationErrors | null {
+
+  const formulario = control.parent
+  const password = formulario?.value.password
+
+  const confirmarPassword = control.value
+
+  if (password === confirmarPassword) {
+    return null
+  }
+
+  return {
+    confirmarPassword: true
+  }
+}
+
+
 export const CustomValidators = {
   esUnStark,
-  esPasswordSegura
+  esPasswordSegura,
+  passwordRepetidaValida
 }
 
 // const ObjValidaciones = {

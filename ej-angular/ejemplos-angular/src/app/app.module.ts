@@ -23,6 +23,12 @@ import { Cmp06FormulariosComponent } from './cmp06-formularios/cmp06-formularios
 import { DePlantillaComponent } from './cmp06-formularios/de-plantilla/de-plantilla.component';
 import { ReactivoComponent } from './cmp06-formularios/reactivo/reactivo.component';
 import { ErrorComponent } from './cmp06-formularios/error/error.component';
+import { Cmp07ServiciosComponent } from './cmp07-servicios/cmp07-servicios.component';
+import { CmpAComponent } from './cmp07-servicios/cmp-a/cmp-a.component';
+import { CmpBComponent } from './cmp07-servicios/cmp-b/cmp-b.component';
+import { Cmp08ObservablesComponent } from './cmp08-observables/cmp08-observables.component';
+import { SuscripcionComponent } from './cmp08-observables/suscripcion/suscripcion.component';
+import { FechaActualComponent } from './cmp08-observables/fecha-actual/fecha-actual.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +53,12 @@ import { ErrorComponent } from './cmp06-formularios/error/error.component';
     DePlantillaComponent,
     ReactivoComponent,
     ErrorComponent,
+    Cmp07ServiciosComponent,
+    CmpAComponent,
+    CmpBComponent,
+    Cmp08ObservablesComponent,
+    SuscripcionComponent,
+    FechaActualComponent,
   ],
   imports: [
     BrowserModule,

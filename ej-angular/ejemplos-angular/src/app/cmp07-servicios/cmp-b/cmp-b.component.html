@@ -1,0 +1,12 @@
+<h3>CMP B</h3>
+
+<input type="text" #inputTxt>
+<button type="button" (click)="guardar(inputTxt.value)">Click</button>
+
+<ul *ngIf="isLoggedIn; else logueate">
+  <li *ngFor="let dato of datos">{{dato}}</li>
+</ul>
+
+<ng-template #logueate>
+  <p>Necesitas estar logueado para ver los datos</p>
+</ng-template>
