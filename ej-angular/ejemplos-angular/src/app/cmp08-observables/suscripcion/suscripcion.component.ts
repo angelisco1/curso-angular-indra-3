@@ -14,10 +14,28 @@ export class SuscripcionComponent implements OnInit {
   fechaProximoPago: Date = new Date()
   suscripcionPlataforma: Subscription | null = null
   cancelarSubs$ = new EventEmitter<boolean>()
+  alert: any = {
+    danger: false,
+    info: false,
+    success: false,
+    mensaje: '',
+    mostrar: false
+  }
 
   constructor(private pagosService: PagosService) { }
 
   ngOnInit(): void {
+  }
+
+  showAlert(mensaje: string, tipo: string): void {
+    this.alert.danger = tipo === 'danger'
+    this.alert.info = tipo === 'info'
+    this.alert.success = tipo === 'success'
+    this.alert.mensaje = mensaje
+    this.alert.mostrar = true
+    setTimeout(() => {
+      this.alert.mostrar = false
+    }, 1500)
   }
 
   getFechaProximoPago(): Date {
@@ -58,18 +76,19 @@ export class SuscripcionComponent implements OnInit {
 
       // }, 4000)
 
-      const subscripcionCancelar = this.cancelarSubs$.subscribe(() => {
-        this.subEstado = false
-        subscription.unsubscribe()
-        subscriber.complete()
-        subscripcionCancelar.unsubscribe()
-      })
+      const subscripcionCancelar = this.cancelarSubs$
+        .subscribe(() => {
+          this.subEstado = false
+          subscription.unsubscribe()
+          subscriber.complete()
+          subscripcionCancelar.unsubscribe()
+        })
     })
 
     this.suscripcionPlataforma = observableSub.subscribe({
-      next: (msg: string) => console.log(msg),
-      error: (err: string) => console.log(err),
-      complete: () => console.log('Ya no estás suscrito')
+      next: (msg: string) => this.showAlert(msg, 'success'),
+      error: (err: string) => this.showAlert(err, 'danger'),
+      complete: () => this.showAlert('Has cancelado la suscripción 😭 Te echaremos de menos...', 'info')
     })
 
   }
