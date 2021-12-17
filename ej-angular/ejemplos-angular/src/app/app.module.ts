@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { Cmp01DataBindingComponent } from './cmp01-data-binding/cmp01-data-binding.component';
@@ -29,6 +30,7 @@ import { CmpBComponent } from './cmp07-servicios/cmp-b/cmp-b.component';
 import { Cmp08ObservablesComponent } from './cmp08-observables/cmp08-observables.component';
 import { SuscripcionComponent } from './cmp08-observables/suscripcion/suscripcion.component';
 import { FechaActualComponent } from './cmp08-observables/fecha-actual/fecha-actual.component';
+import { Cmp09HttpComponent } from './cmp09-http/cmp09-http.component';
 
 @NgModule({
   declarations: [
@@ -59,11 +61,13 @@ import { FechaActualComponent } from './cmp08-observables/fecha-actual/fecha-act
     Cmp08ObservablesComponent,
     SuscripcionComponent,
     FechaActualComponent,
+    Cmp09HttpComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
