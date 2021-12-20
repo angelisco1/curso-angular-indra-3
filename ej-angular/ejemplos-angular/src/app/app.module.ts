@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { Cmp01DataBindingComponent } from './cmp01-data-binding/cmp01-data-binding.component';
@@ -31,6 +31,18 @@ import { Cmp08ObservablesComponent } from './cmp08-observables/cmp08-observables
 import { SuscripcionComponent } from './cmp08-observables/suscripcion/suscripcion.component';
 import { FechaActualComponent } from './cmp08-observables/fecha-actual/fecha-actual.component';
 import { Cmp09HttpComponent } from './cmp09-http/cmp09-http.component';
+import { LogInterceptor } from './cmp09-http/interceptors/log.interceptor';
+import { AuthInterceptor } from './cmp09-http/interceptors/auth.interceptor';
+import { Cmp10AutenticacionComponent } from './cmp10-autenticacion/cmp10-autenticacion.component';
+
+// import { environment } from 'src/environments/environment';
+
+// const providers = environment.production ? [
+//   { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+// ] : [
+//   { provide: HTTP_INTERCEPTORS, useClass: LogInterceptor, multi: true },
+//   { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+// ]
 
 @NgModule({
   declarations: [
@@ -62,6 +74,7 @@ import { Cmp09HttpComponent } from './cmp09-http/cmp09-http.component';
     SuscripcionComponent,
     FechaActualComponent,
     Cmp09HttpComponent,
+    Cmp10AutenticacionComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,7 +82,11 @@ import { Cmp09HttpComponent } from './cmp09-http/cmp09-http.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: LogInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
+  // providers: providers,
   bootstrap: [AppComponent]
 })
 export class AppModule { }

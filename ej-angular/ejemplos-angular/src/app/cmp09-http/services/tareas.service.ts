@@ -30,7 +30,31 @@ export class TareasService {
       )
   }
 
-  createTareas(tarea: Tarea): Observable<IIdNuevaTarea> {
+  createTarea(tarea: Tarea): Observable<IIdNuevaTarea> {
     return this.http.post<IIdNuevaTarea>(`${this.url}.json`, tarea)
+  }
+
+  completeTarea(tarea: Tarea): Observable<any> {
+    const datosACambiar = {completada: !tarea.completada}
+    const idTarea = tarea.id
+    return this.http.patch(`${this.url}/${idTarea}.json`, datosACambiar)
+  }
+
+  deleteTarea(idTarea: string): Observable<null> {
+    return this.http.delete<null>(`${this.url}/${idTarea}.json`)
+  }
+
+  updateTarea(tarea: Tarea): Observable<Tarea> {
+    const idTarea = tarea.id
+    // SOLUCION 1
+    // const datosACambiar = {
+    //   titulo: tarea.titulo,
+    //   completada: tarea.completada
+    // }
+
+    // SOLUCION 2
+    const datosACambiar = {...tarea}
+    delete datosACambiar.id
+    return this.http.put<Tarea>(`${this.url}/${idTarea}.json`, datosACambiar)
   }
 }
