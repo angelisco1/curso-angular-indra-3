@@ -1,5 +1,15 @@
 import { Injectable } from '@angular/core';
 import { EventosService } from './eventos.service';
+import jwtDecode from 'jwt-decode';
+
+interface JWTData {
+  id: number,
+  rol: string,
+  nombre: string,
+  iat: number,
+  lang: string,
+  theme: string
+}
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +18,16 @@ export class AuthService {
   private keyToken: string = 'jwt'
 
   constructor(private eventos: EventosService) { }
+
+  getUserIdFromToken(): number {
+    const token = this.getToken()
+    if (token) {
+      const payload: JWTData = jwtDecode(token)
+      console.log({payload})
+      return payload.id
+    }
+    return -1
+  }
 
   getToken(): string | null {
     return localStorage.getItem(this.keyToken)

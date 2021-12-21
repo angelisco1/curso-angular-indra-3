@@ -4,29 +4,37 @@
       "id": 1,
       "titulo": "El niño murcielago reaparece en la playa",
       "contenido": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, nam veritatis quis porro expedita aliquid? Provident, ea corrupti dignissimos hic ipsum accusamus, dolore illo eveniet asperiores necessitatibus assumenda tenetur obcaecati.",
-      "authorId": 1
+      "userId": 1
     },
     {
       "id": 2,
       "titulo": "El caballo blanco de Santiago no era blanco",
       "contenido": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, nam veritatis quis porro expedita aliquid? Provident, ea corrupti dignissimos hic ipsum accusamus, dolore illo eveniet asperiores necessitatibus assumenda tenetur obcaecati.",
-      "authorId": 1
+      "userId": 1
     },
     {
       "titulo": "Aumenta la venta de pitos y flautas",
-      "contenido": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, nam veritatis quis porro expedita aliquid? Provident, ea corrupti dignissimos hic ipsum accusamus, dolore illo eveniet asperiores necessitatibus assumenda tenetur obcaecati.",
+      "contenido": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, nam veritatis quis porro expedita aliquid?.",
       "id": 3,
-      "authorId": 2
+      "userId": 2
     }
   ],
-  "authors": [
+  "users": [
     {
-      "id": 1,
-      "nombre": "Ángel"
+      "username": "aaaa",
+      "password": "1234",
+      "nombre": "AAAA",
+      "email": "aaa@aaa.com",
+      "rol": "USER",
+      "id": 1
     },
     {
-      "id": 2,
-      "nombre": "Sara"
+      "username": "aaaa",
+      "password": "1234",
+      "nombre": "AAAA",
+      "email": "bbb@aaa.com",
+      "rol": "USER",
+      "id": 2
     }
   ]
 }

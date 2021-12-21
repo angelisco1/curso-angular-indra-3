@@ -9,10 +9,26 @@
 <!-- <app-cmp08-observables></app-cmp08-observables> -->
 <!-- <app-cmp09-http></app-cmp09-http> -->
 
-<app-cmp10-autenticacion></app-cmp10-autenticacion>
 
 
-<button type="button" *ngIf="isLoggedIn; else btnLogin" (click)="logout()">Logout</button>
+<ng-container *ngIf="isLoggedIn; else btnLogin">
+  <button type="button" (click)="logout()">Logout</button>
+
+  <app-cmp10-autenticacion></app-cmp10-autenticacion>
+</ng-container>
+
 <ng-template #btnLogin>
-  <button type="button" (click)="login()">Login</button>
+
+  <form (ngSubmit)="login()" [formGroup]="formLogin">
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email">
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" formControlName="password">
+    </div>
+    <button type="submit" [disabled]="formLogin.invalid || disabledLoginBtn">Login</button>
+  </form>
+
 </ng-template>

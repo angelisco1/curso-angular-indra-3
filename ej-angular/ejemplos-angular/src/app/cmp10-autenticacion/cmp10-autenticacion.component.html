@@ -1,1 +1,20 @@
 <h2>Autenticación con JWT</h2>
+
+<form (ngSubmit)="guardarNoticia()" [formGroup]="formNoticia">
+  <div>
+    <label for="titulo">Título:</label>
+    <input type="text" id="titulo" formControlName="titulo">
+  </div>
+  <div>
+    <label for="contenido">Contenido:</label>
+    <input type="text" id="contenido" formControlName="contenido">
+  </div>
+  <button type="submit">Guardar</button>
+</form>
+
+
+<div *ngFor="let n of noticias">
+  <h4>{{n.titulo}}</h4>
+  <p>{{n.contenido}}</p>
+  <!-- <p>Autor: ...</p> -->
+</div>

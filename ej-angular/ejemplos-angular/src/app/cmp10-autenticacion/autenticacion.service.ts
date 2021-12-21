@@ -9,11 +9,11 @@ export class AutenticacionService {
 
   constructor(private http: HttpClient) { }
 
-  login(): Observable<any> {
-    const datosLogin = {
-      username: 'cfalco',
-      password: '1234'
-    }
+  login(datosLogin: {email: string, password: string}): Observable<any> {
+    // const datosLogin = {
+    //   email: 'aaa@aaa.com',
+    //   password: '1234'
+    // }
     return this.http.post('http://localhost:3200/login', datosLogin)
   }
 
