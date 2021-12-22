@@ -41,6 +41,8 @@ import { InfoUsuarioComponent } from './cmp11-routing/info-usuario/info-usuario.
 import { Error404Component } from './cmp11-routing/error404/error404.component';
 import { RoutingModule } from './cmp11-routing/app.routes';
 import { EditarUsuarioComponent } from './cmp11-routing/editar-usuario/editar-usuario.component';
+import { Cmp12ModulosYLazyLoadingComponent } from './cmp12-modulos-y-lazy-loading/cmp12-modulos-y-lazy-loading.component';
+// import { TarjetasCreditoModule } from './tarjetas-credito/tarjetas-credito.module';
 
 // import { environment } from 'src/environments/environment';
 
@@ -88,13 +90,15 @@ import { EditarUsuarioComponent } from './cmp11-routing/editar-usuario/editar-us
     InfoUsuarioComponent,
     Error404Component,
     EditarUsuarioComponent,
+    Cmp12ModulosYLazyLoadingComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RoutingModule
+    RoutingModule,
+    // TarjetasCreditoModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LogInterceptor, multi: true },

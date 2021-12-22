@@ -3,7 +3,7 @@
 <ul>
   <li *ngFor="let u of listaUsuarios">
     {{u.nombre}}
-    <a [routerLink]="['/usuarios', u.id, 'info']">Ver info</a>
+    <a [routerLink]="['/usuarios', u.id, 'info']" [state]="{usuario: u}">Ver info</a>
     <a [routerLink]="['/usuarios', u.id, 'editar']">Editar</a>
   </li>
 </ul>
