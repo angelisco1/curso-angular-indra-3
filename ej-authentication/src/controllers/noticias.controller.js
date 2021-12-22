@@ -22,8 +22,18 @@ const getNoticias = (req, res, next) => {
     })
 }
 
+const getNoticia = (req, res, next) => {
+  const { id } = req.params
+  console.log({id})
+
+  axios.get(`http://localhost:3000/noticias/${id}`)
+    .then(resp => {
+      return res.json(resp.data)
+    })
+}
 
 module.exports = {
   createNoticia,
-  getNoticias
+  getNoticias,
+  getNoticia
 }

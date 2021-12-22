@@ -11,5 +11,6 @@ router.post('/login', AuthController.login)
 router.get('/noticias', NoticiasController.getNoticias)
 
 router.post('/noticias', isTokenValid, NoticiasController.createNoticia)
+router.get('/noticias/:id', NoticiasController.getNoticia)
 
 module.exports = router

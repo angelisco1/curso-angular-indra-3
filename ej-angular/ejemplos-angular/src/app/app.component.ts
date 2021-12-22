@@ -55,8 +55,8 @@ export class AppComponent implements OnInit {
         next: (datos: any) => {
           const token = datos.token
 
-          const payload = jwtDecode(token)
-          console.log({payload})
+          // const payload = jwtDecode(token)
+          // console.log({payload})
 
           // const token = Math.random().toString().slice(2)
           this.auth.setToken(token)

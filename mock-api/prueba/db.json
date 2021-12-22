@@ -17,6 +17,18 @@
       "contenido": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, nam veritatis quis porro expedita aliquid?.",
       "id": 3,
       "userId": 2
+    },
+    {
+      "titulo": "Título 2",
+      "contenido": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, nam veritatis quis porro expedita aliquid? Provident, ea corrupti dignissimos hic ipsum accusamus, dolore illo eveniet asperiores necessitatibus assumenda tenetur obcaecati.",
+      "authorId": 1,
+      "id": 4
+    },
+    {
+      "titulo": "aasdasd",
+      "contenido": "asdasd",
+      "userId": 2,
+      "id": 5
     }
   ],
   "users": [
@@ -29,9 +41,9 @@
       "id": 1
     },
     {
-      "username": "aaaa",
+      "username": "bbbb",
       "password": "1234",
-      "nombre": "AAAA",
+      "nombre": "BBBB",
       "email": "bbb@aaa.com",
       "rol": "USER",
       "id": 2
