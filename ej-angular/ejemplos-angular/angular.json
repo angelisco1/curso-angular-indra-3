@@ -10,6 +10,11 @@
           "strict": true
         }
       },
+      "i18n": {
+        "locales": {
+          "es": "src/locales/messages.es.xlf"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -35,6 +40,9 @@
             ]
           },
           "configurations": {
+            "es": {
+              "localize": ["es"]
+            },
             "production": {
               "budgets": [
                 {
@@ -70,6 +78,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
+            "es": {
+              "browserTarget": "ejemplos-angular:build:es"
+            },
             "production": {
               "browserTarget": "ejemplos-angular:build:production"
             },

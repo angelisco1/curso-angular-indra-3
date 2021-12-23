@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" target-language="es" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="7373613501758200135" datatype="html">
+        <source>Internationalization</source>
+        <target>Internacionalización</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/cmp13-internacionalizacion/cmp13-internacionalizacion.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3022994926184248873" datatype="html">
+        <source>Hello world!</source>
+        <target>Hola mundo!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/cmp13-internacionalizacion/cmp13-internacionalizacion.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5696244706071223399" datatype="html">
+        <source>Price: <x id="INTERPOLATION" equiv-text="{{precio | currency:&apos;EUR&apos;}}"/></source>
+        <target>Precio: <x id="INTERPOLATION" equiv-text="{{precio | currency:&apos;EUR&apos;}}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/cmp13-internacionalizacion/cmp13-internacionalizacion.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6520784363517291239" datatype="html">
+        <source>Dates: <x id="INTERPOLATION" equiv-text="{{fecha | date}}"/></source>
+        <target>Fechas: <x id="INTERPOLATION" equiv-text="{{fecha | date}}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/cmp13-internacionalizacion/cmp13-internacionalizacion.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4001222456101949811" datatype="html">
+        <source>Good bye</source>
+        <target>Adios</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/cmp13-internacionalizacion/cmp13-internacionalizacion.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
